@@ -35,7 +35,7 @@ const Hero = () => {
             Creative developer based in Melbourne
 
           </p>
-          <Button id="watch-trailer" title="WD"></Button>
+          <Button id="watch-trailer" title="WD"  containerClass="!bg-yellow-300 flex-center gap-1"/>
         </div>
       </div>
     </div>
