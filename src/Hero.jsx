@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import Button from "./Button";
 import {TiLocationArrow} from "react-icons/ti";
 import { useGSAP } from "@gsap/react";
@@ -10,9 +10,6 @@ const Hero = () => {
   const handleVideoLoad = () => {
     setIsVideoLoaded(true);
   };
-
-  useGSAP(() => {
-    
 
   useGSAP(() => {
     
@@ -44,7 +41,7 @@ const Hero = () => {
             Creative developer based in Melbourne
 
           </p>
-          <Button id="watch-trailer" title="WD"  containerClass="!bg-yellow-300 flex-center gap-1"/>
+          <Button id="watch-trailer" title="Watch Video"  containerClass="!bg-yellow-300 flex-center gap-1"/>
         </div>
       </div>
     </div>
