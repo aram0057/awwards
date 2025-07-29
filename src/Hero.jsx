@@ -1,5 +1,8 @@
 import { useState } from "react";
 import Button from "./Button";
+import {TiLocationArrow} from "react-icons/ti";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Hero = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -7,6 +10,12 @@ const Hero = () => {
   const handleVideoLoad = () => {
     setIsVideoLoaded(true);
   };
+
+  useGSAP(() => {
+    
+
+  useGSAP(() => {
+    
 
   const getVideoSrc = () => "/videos/hero-1.mp4"; // Replace with your actual video path
 
