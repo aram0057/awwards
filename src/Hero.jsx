@@ -1,8 +1,10 @@
 import { use, useState } from "react";
 import Button from "./Button";
-import {TiLocationArrow} from "react-icons/ti";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -12,14 +14,32 @@ const Hero = () => {
   };
 
   useGSAP(() => {
-    
+    gsap.set('#video-frame', {
+      clipPath: 'polygon(20% 0%, 82% 5%, 100% 100%, 4% 72%)',
+      borderRadius: '0 0 40% 10%'
+   })
+   gsap.from('#video-frame', {
+    clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+    borderRadius: '0 0 0 0',
+    ease: 'power1.inOut',
+    scrollTrigger:{
+      trigger: '#video-frame',
+      start: 'center center',
+      end: 'bottom center',
+      scrub: true,
+
+    }
+  })
+  })
 
   const getVideoSrc = () => "/videos/hero-1.mp4"; // Replace with your actual video path
 
   return (
     <div className="relative h-dvh w-screen overflow-hidden">
+      
       {/* Background Video */}
       <video
+      id = "video-frame"
         src={getVideoSrc()}
         loop
         muted
